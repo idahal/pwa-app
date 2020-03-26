@@ -18,7 +18,7 @@ function App() {
       <header>
         <h1>Images</h1>
       </header>
-      {data.map(item => (
+      {data.slice(0,9).map(( item) => (
         <div key={item.id}>
           <p>{item.title}</p>
           <img src={item.thumbnailUrl} alt="Logo" />
