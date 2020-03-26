@@ -1,29 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-
+import item from '../src/Images/imageOne.png'
 function App() {
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
 
-  useEffect(() => {
-    const fetchData = async() => {
-      const result = await fetch('https://jsonplaceholder.typicode.com/photos').then (
-        response => response.json()
-      )
-      setData(result)
-    }
-    fetchData()
-  }, [])
+  // useEffect(() => {
+  //   const fetchData = async() => {
+  //     const result = await fetch('https://jsonplaceholder.typicode.com/photos').then (
+  //       response => response.json()
+  //     )
+  //     setData(result)
+  //   }
+  //   fetchData()
+  // }, [])
   return (
     <div className="App">
       <header>
         <h1>Images</h1>
       </header>
-      {data.slice(0,9).map(( item) => (
+      <div>
+      <img src={item} alt="Logo" />
+      </div>
+      {/* {data.slice(0,9).map(( item) => (
         <div key={item.id}>
           <p>{item.title}</p>
           <img src={item.thumbnailUrl} alt="Logo" />
-        </div> 
-      ))}
+        </div>  
+      ))} */}
     </div>
   );
 }
